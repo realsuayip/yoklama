@@ -1,0 +1,67 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "yoklama"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = [
+    "httpx ~= 0.25.0"
+]
+
+[project.optional-dependencies]
+dev = [
+    "mypy",
+    "coverage",
+]
+
+[tool.ruff]
+fix = true
+fixable = ["I", "F401"]
+show-fixes = true
+select = [
+    "E", # pycodestyle errors
+    "W", # pycodestyle warnings
+    "F", # pyflakes
+    "C", # flake8-comprehensions
+    "B", # flake8-bugbear
+    "RUF", # Ruff-specific
+    "C4", # flake8-comprehensions
+    "C90", # mccabe
+    "I", # isort
+]
+line-length = 88
+ignore = ["B904", "RUF012"]
+
+[tool.ruff.isort]
+combine-as-imports = true
+section-order = [
+    "future",
+    "standard-library",
+    "third-party",
+    "first-party",
+    "local-folder",
+]
+
+[tool.ruff.mccabe]
+max-complexity = 10
+
+[tool.mypy]
+strict = true
+
+[tool.coverage.run]
+source = ["yoklama"]
+
+[tool.coverage.report]
+exclude_also = [
+    "if TYPE_CHECKING:",
+    'raise NotImplementedError',
+    'raise AssertionError',
+    'def __str__',
+    'def __repr__',
+]
+
+[tool.coverage.html]
+skip_empty = true
+skip_covered = true
