@@ -43,7 +43,6 @@ class Module:
         # TODO: Register failing checks.
         response = await self.get_response()
         self.response_url = response.url
-        print(response.url)
         return all(checker.check(response) for checker in self.get_checkers())
 
     async def run(self) -> tuple[str, httpx.URL | None] | None:

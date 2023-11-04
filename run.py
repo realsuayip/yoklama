@@ -8,5 +8,4 @@ if __name__ == "__main__":
     if len(sys.argv) > 2:
         logging.basicConfig(level="INFO")
     value = sys.argv[1]
-    print(f"{value=}")
     asyncio.run(run(sys.argv[1]))
