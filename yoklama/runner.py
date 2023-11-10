@@ -2,12 +2,16 @@ import asyncio
 
 import httpx
 
-from yoklama.base import AVAILABLE_MODULES
+from yoklama.base import AVAILABLE_MODULES, DEFAULT_USER_AGENT
 
 
 async def run(value: str) -> None:
     print("Received: '%s'" % value)
-    client = httpx.AsyncClient(follow_redirects=True, timeout=30)
+    client = httpx.AsyncClient(
+        follow_redirects=True,
+        timeout=30,
+        headers={"User-Agent": DEFAULT_USER_AGENT},
+    )
 
     futures = []
     for klass in AVAILABLE_MODULES:
