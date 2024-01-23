@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "yoklama"
 version = "0.1.0"
-requires-python = ">=3.11"
+requires-python = ">=3.9"
 dependencies = [
     "httpx ~= 0.25.0",
     "beautifulsoup4 ~= 4.12.2",

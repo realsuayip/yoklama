@@ -23,7 +23,7 @@ async def test_status_code_checker(
     not_found = await module.run()
 
     assert name == "eksisozluk.com"
-    assert str(url) == "https://eksisozluk1923.com/biri/username"
+    assert str(url) == "https://eksisozluk.com/biri/username"
     assert not_found is None
 
 

@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import logging
-from typing import Any, Self
+from typing import Any, TypeVar
 
 import httpx
 
@@ -14,6 +14,8 @@ DEFAULT_USER_AGENT = (
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15"
     " (KHTML, like Gecko) Version/17.0 Safari/605.1.15"
 )
+
+Self = TypeVar("Self", bound="Module")
 
 
 class Module:
@@ -28,7 +30,7 @@ class Module:
     def __init_subclass__(cls, enabled: bool = True) -> None:
         AVAILABLE_MODULES.append(cls)
 
-    def __call__(self, *, value: str) -> Self:
+    def __call__(self: Self, *, value: str) -> Self:
         self.value = value
         return self
 
