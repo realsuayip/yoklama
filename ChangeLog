@@ -1,0 +1,58 @@
+2024-02-03  Mert Gör  <mertgor@masscollabs.xyz>
+
+	* yoklama/modules/uludagsozluk.py: uludağ sözlük
+
+	* yoklama/modules/teknoseyir.py: teknoseyir
+
+	* yoklama/modules/technopat.py: technopat
+
+	* yoklama/modules/shiftdelete.py: shiftdelete
+
+	* yoklama/modules/onedio.py: onedio
+
+	* yoklama/modules/memurlarsozluk.py: memurlar sözlük
+
+	* yoklama/modules/kizlarsoruyor.py: kızlar soruyor
+
+	* yoklama/modules/instela.py: instela
+
+	* yoklama/modules/__init__.py: init file python
+
+	* yoklama/modules/incisozluk.py: inci sözlük
+
+	* yoklama/modules/evrimagaci.py: evrim ağacı
+
+	* yoklama/modules/eksisozluk.py: ekşisözlük
+
+	* yoklama/modules/donanimhaber.py: donanımhaber
+
+	* yoklama/modules/dergipark.py: dergipark
+
+	* yoklama/runner.py: runner file Python
+
+	* yoklama/__init__.py: init file Python
+
+	* yoklama/checkers.py: checkers file Python
+
+	* yoklama/base.py: base file Python
+
+	* tests/test_checkers.py: test checkers file python
+
+	* tests/__init__.py: init file
+
+	* tests/conftest.py: conftest.py file added
+
+	* tox.ini: ini file
+
+	* run.py: run py file
+
+	* README.md: README fix Technopat
+
+	* pyproject.toml: toml file
+
+	* .pre-commit-config.yaml (repos): yaml file
+
+	* LICENSE: Contributors added to Copyright Holders 
+
+	* .gitignore: gitignore for Python output
+
