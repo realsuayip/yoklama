@@ -48,7 +48,7 @@ class Module:
         try:
             response = await self.get_response()
         except httpx.HTTPError:
-            print("Network error in %s" % self.url)
+            print("Network error in %s" % self.name)
             return False
         self.response_url = response.url
         return all(checker.check(response) for checker in self.get_checkers())
