@@ -42,8 +42,14 @@ class Module:
         return await self.client.get(url, headers=headers)
 
     async def check(self) -> bool:
-        # TODO: Register failing checks.
-        response = await self.get_response()
+        # TODO: Add a central mechanism to handle all sorts of errors.
+        #  In that, aggregate checker exceptions/errors and network errors
+        #  in an errors list in module instances.
+        try:
+            response = await self.get_response()
+        except httpx.HTTPError:
+            print("Network error in %s" % self.url)
+            return False
         self.response_url = response.url
         return all(checker.check(response) for checker in self.get_checkers())
 
